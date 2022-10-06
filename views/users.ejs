@@ -1,0 +1,58 @@
+<!-- inclimos el header de template -->
+<%- include("template/header")%>
+<!-- incluimos la barra de navegacion de template -->
+<%- include("template/nav") %>
+<!-- incluimos la barra lateral de template -->
+<%- include("template/aside") %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <%- include("template/breadCrums", {module: 'Users'}) %>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-md-12">
+            <div class="container">
+              <a href="/createUser" class="btn btn-primary mb-2"><i class="bi bi-person-plus"></i></a>
+                <table id="example1" class="table table-bordered table-striped text-center mt-22">
+                  <thead>
+                    <tr class="bg-primary text-white">
+                      <th scope="col">#ID</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Rol</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <% results.forEach((user)=>{ %>  
+                    <tr>
+                      <th><%= user.id %></th>
+                      <th><%= user.name %></th>
+                      <th><%= user.email %></th>
+                      <th><%= user.rol %></th>
+                      <td>
+                          <a href="/editUser/<%= user.id %>" class="btn btn-info"><i class="bi bi-hand-index-thumb-fill"></i></a>
+                          <a onclick=" confirmar(<%= user.id %>)" class="btn btn-danger"><i class="bi bi-trash3"></i></a>
+                      </td>
+                    </tr>
+      
+                    <% }) %>
+      
+                  </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  
+  <!-- incluimos el footer de template -->
+<%- include("template/footer") %>

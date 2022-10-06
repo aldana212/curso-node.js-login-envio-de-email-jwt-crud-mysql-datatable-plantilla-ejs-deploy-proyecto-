@@ -1,0 +1,40 @@
+<!-- inclimos el header de template -->
+<%- include("template/header") %>
+<!-- incluimos la barra de navegacion de template -->
+<%- include("template/nav") %>
+<!-- incluimos la barra lateral de template -->
+<%- include("template/aside", {userName: userName, image: image}) %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <%- include("template/breadCrums", {module: 'Desktop'}) %>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-md-12">
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                      Welcome <%= userName %>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="/" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  
+  <!-- incluimos el footer de template -->
+<%- include("template/footer") %>
